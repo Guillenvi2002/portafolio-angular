@@ -17,9 +17,15 @@ export class ProductosService {
 
   private cargarProductos() {
     this.http.get('https://angular-html-476bd-default-rtdb.europe-west1.firebasedatabase.app/productos_idx.json')
-    .subscribe((resp: ProductosInterface) => {
+    .subscribe((resp: any) => {
+      
+      this.productos = resp;
       console.log(resp);
-      this.cargando=false;
+
+      setTimeout(() => {
+        this.cargando=false;
+      }, 2000);
+      
     });
   }
 
