@@ -18,15 +18,14 @@ export class ProductosService {
   private cargarProductos() {
     this.http.get('https://angular-html-476bd-default-rtdb.europe-west1.firebasedatabase.app/productos_idx.json')
     .subscribe((resp: any) => {
-      
       this.productos = resp;
-      console.log(resp);
-
-      setTimeout(() => {
-        this.cargando=false;
-      }, 2000);
-      
+      this.cargando=false;
     });
+  }
+
+  getProducto(id: string) {
+    return this.http.get(`https://angular-html-476bd-default-rtdb.europe-west1.firebasedatabase.app/productos/${id}.json`);
+
   }
 
 }
