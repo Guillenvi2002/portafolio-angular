@@ -26,7 +26,7 @@
         </ul>
         <div class="rk-search">
           <input type="text" 
-              (keyup.enter)="buscarProducto()";
+              (keyup.enter)="buscarProducto( txtBuscar.value )"
               placeholder="Buscar..." 
               id="urku-search" 
               class="rk-search-field"
